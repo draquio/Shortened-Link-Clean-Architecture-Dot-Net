@@ -1,0 +1,15 @@
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\bin\Debug\net8.0\ShortenedLinks.Application.deps.json
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\bin\Debug\net8.0\ShortenedLinks.Application.dll
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\bin\Debug\net8.0\ShortenedLinks.Application.pdb
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\ShortenedLinks.Application.GeneratedMSBuildEditorConfig.editorconfig
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\ShortenedLinks.Application.AssemblyInfoInputs.cache
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\ShortenedLinks.Application.AssemblyInfo.cs
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\ShortenedLinks.Application.csproj.CoreCompileInputs.cache
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\ShortenedLinks.Application.dll
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\refint\ShortenedLinks.Application.dll
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\ShortenedLinks.Application.pdb
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\ref\ShortenedLinks.Application.dll
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\ShortenedLinks.Application.csproj.AssemblyReference.cache
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\bin\Debug\net8.0\ShortenedLinks.Domain.dll
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\bin\Debug\net8.0\ShortenedLinks.Domain.pdb
+E:\Net\ShortenedLinks.API\ShortenedLinks.Application\obj\Debug\net8.0\Shortene.CC651664.Up2Date
