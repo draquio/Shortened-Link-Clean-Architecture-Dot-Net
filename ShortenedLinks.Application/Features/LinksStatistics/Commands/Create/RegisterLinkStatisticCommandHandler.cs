@@ -12,7 +12,7 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Commands.Create
         private readonly ILinkStatisticRepository _linkStatisticRepository;
         private readonly IGeoLocationService _geoLocationService;
         private readonly IDeviceInfoService _deviceInfoService;
-
+        private const int MaxVisitsPerIp = 3;
         public RegisterLinkStatisticCommandHandler(ILinkStatisticRepository linkStatisticRepository,
             IGeoLocationService geoLocationService,
             IDeviceInfoService deviceInfoService)
@@ -26,20 +26,25 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Commands.Create
         {
             try
             {
-                var country = await _geoLocationService.GetCountryByIp(request.VisitorIp);
-                var deviceType = _deviceInfoService.GetDeviceType(request.UserAgent);
-                LinkStatistic linkStatistics = new LinkStatistic
+                int todayVisits = await _linkStatisticRepository.CountVisitsByIp(request.LinkId, request.VisitorIp);
+                if (todayVisits <= MaxVisitsPerIp)
                 {
-                    Country = country,
-                    Browser = deviceType.Browser,
-                    Device = deviceType.Device,
-                    LinkId = request.LinkId,
-                    VisitDate = DateTime.UtcNow,
-                    VisitorIp = request.VisitorIp
-                };
-                await _linkStatisticRepository.Create(linkStatistics);
+                    var country = await _geoLocationService.GetCountryByIp(request.VisitorIp);
+                    var deviceType = _deviceInfoService.GetDeviceType(request.UserAgent);
+                    LinkStatistic linkStatistics = new LinkStatistic
+                    {
+                        Country = country,
+                        Browser = deviceType.Browser,
+                        Device = deviceType.Device,
+                        LinkId = request.LinkId,
+                        VisitDate = DateTime.UtcNow,
+                        VisitorIp = request.VisitorIp
+                    };
+                    await _linkStatisticRepository.Create(linkStatistics);
+                }
                 return Unit.Value;
             }
+            catch (InvalidOperationException) { throw; }
             catch (Exception ex)
             {
                 throw new ApplicationException("An error occurred while setting data.", ex);

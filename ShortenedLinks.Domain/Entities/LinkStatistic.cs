@@ -16,6 +16,5 @@ namespace ShortenedLinks.Domain.Entities
         public string Device { get; set; }
         public string Browser { get; set; }
         public virtual Link Link { get; set; }
-
     }
 }

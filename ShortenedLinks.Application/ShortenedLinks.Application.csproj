@@ -7,7 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Features\LinksStatistics\Queries\" />
     <Folder Include="Features\ShortLink\Commands\" />
   </ItemGroup>
 

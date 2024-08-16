@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ShortenedLinks.Application.DTO.Link;
+using ShortenedLinks.Application.DTO.LinkStatistic;
 using ShortenedLinks.Application.DTO.ShortLink;
 using ShortenedLinks.Application.DTO.User;
 using ShortenedLinks.Domain.Entities;
@@ -26,6 +27,10 @@ namespace ShortenedLinks.Application.Mapper
 
             CreateMap<Link, ShortLinkDetailDTO>()
                 .ForMember(dto => dto.Username, options => options.MapFrom(link => link.User.Username));
+            #endregion
+
+            #region LinkClicksStatisticTop
+            CreateMap<LinkClicksStatisticTop, LinkClicksStatisticTopDTO>().ReverseMap();
             #endregion
         }
     }

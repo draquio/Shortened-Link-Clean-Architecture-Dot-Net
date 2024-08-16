@@ -5,6 +5,7 @@ E:\Net\ShortenedLinks.API\ShortenedLinks.Domain\obj\Debug\net8.0\ShortenedLinks.
 E:\Net\ShortenedLinks.API\ShortenedLinks.Domain\obj\Debug\net8.0\ShortenedLinks.Domain.AssemblyInfoInputs.cache
 E:\Net\ShortenedLinks.API\ShortenedLinks.Domain\obj\Debug\net8.0\ShortenedLinks.Domain.AssemblyInfo.cs
 E:\Net\ShortenedLinks.API\ShortenedLinks.Domain\obj\Debug\net8.0\ShortenedLinks.Domain.csproj.CoreCompileInputs.cache
+E:\Net\ShortenedLinks.API\ShortenedLinks.Domain\obj\Debug\net8.0\ShortenedLinks.Domain.sourcelink.json
 E:\Net\ShortenedLinks.API\ShortenedLinks.Domain\obj\Debug\net8.0\ShortenedLinks.Domain.dll
 E:\Net\ShortenedLinks.API\ShortenedLinks.Domain\obj\Debug\net8.0\refint\ShortenedLinks.Domain.dll
 E:\Net\ShortenedLinks.API\ShortenedLinks.Domain\obj\Debug\net8.0\ShortenedLinks.Domain.pdb

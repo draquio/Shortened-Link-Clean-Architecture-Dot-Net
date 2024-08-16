@@ -18,7 +18,6 @@
     <ProjectReference Include="..\ShortenedLinks.Application\ShortenedLinks.Application.csproj" />
     <ProjectReference Include="..\ShortenedLinks.Domain\ShortenedLinks.Domain.csproj" />
     <ProjectReference Include="..\ShortenedLinks.Infrastructure\ShortenedLinks.Infrastructure.csproj" />
-    <ProjectReference Include="..\ShortenedLinks.Tests\ShortenedLinks.Tests.csproj" />
   </ItemGroup>
 
 </Project>

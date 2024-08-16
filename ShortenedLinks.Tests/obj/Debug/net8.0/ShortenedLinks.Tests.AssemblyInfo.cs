@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShortenedLinks.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2946d292b8aa4a0facbe98e78ba9f551f5398b3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShortenedLinks.Tests")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShortenedLinks.Tests")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

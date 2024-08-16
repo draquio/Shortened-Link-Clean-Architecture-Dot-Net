@@ -91,6 +91,7 @@ E:\Net\ShortenedLinks.API\ShortenedLinks.Tests\obj\Debug\net8.0\ShortenedLinks.T
 E:\Net\ShortenedLinks.API\ShortenedLinks.Tests\obj\Debug\net8.0\ShortenedLinks.Tests.AssemblyInfoInputs.cache
 E:\Net\ShortenedLinks.API\ShortenedLinks.Tests\obj\Debug\net8.0\ShortenedLinks.Tests.AssemblyInfo.cs
 E:\Net\ShortenedLinks.API\ShortenedLinks.Tests\obj\Debug\net8.0\ShortenedLinks.Tests.csproj.CoreCompileInputs.cache
+E:\Net\ShortenedLinks.API\ShortenedLinks.Tests\obj\Debug\net8.0\ShortenedLinks.Tests.sourcelink.json
 E:\Net\ShortenedLinks.API\ShortenedLinks.Tests\obj\Debug\net8.0\Shortene.BD985215.Up2Date
 E:\Net\ShortenedLinks.API\ShortenedLinks.Tests\obj\Debug\net8.0\ShortenedLinks.Tests.dll
 E:\Net\ShortenedLinks.API\ShortenedLinks.Tests\obj\Debug\net8.0\refint\ShortenedLinks.Tests.dll

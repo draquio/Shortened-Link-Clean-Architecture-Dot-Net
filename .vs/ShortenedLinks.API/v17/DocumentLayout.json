@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "E:\\Net\\ShortenedLinks.API\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.api\\controllers\\linkstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|solutionrelative:shortenedlinks.api\\controllers\\linkstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.api\\controllers\\shortlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|solutionrelative:shortenedlinks.api\\controllers\\shortlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.application\\services\\geolocation\\geolocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|solutionrelative:shortenedlinks.application\\services\\geolocation\\geolocationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{57F8B0DB-735F-4FD2-9F9B-43D389339203}|ShortenedLinks.Domain\\ShortenedLinks.Domain.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.domain\\entities\\linkstatistic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{57F8B0DB-735F-4FD2-9F9B-43D389339203}|ShortenedLinks.Domain\\ShortenedLinks.Domain.csproj|solutionrelative:shortenedlinks.domain\\entities\\linkstatistic.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{42EE01BB-8F67-4108-99AD-66D93AE490D1}|ShortenedLinks.Infrastructure\\ShortenedLinks.Infrastructure.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.infrastructure\\ioc\\dependencies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{42EE01BB-8F67-4108-99AD-66D93AE490D1}|ShortenedLinks.Infrastructure\\ShortenedLinks.Infrastructure.csproj|solutionrelative:shortenedlinks.infrastructure\\ioc\\dependencies.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +23,27 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ShortLinkController.cs",
-              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
-              "RelativeDocumentMoniker": "ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
-              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
-              "RelativeToolTip": "ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAuwBkAAAAMAAAA",
+              "Title": "LinkStats.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\LinkStats.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.API\\Controllers\\LinkStats.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\LinkStats.cs",
+              "RelativeToolTip": "ShortenedLinks.API\\Controllers\\LinkStats.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T22:24:25.208Z",
+              "WhenOpened": "2024-08-16T21:10:22.142Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "GeoLocationService.cs",
-              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Services\\GeoLocation\\GeoLocationService.cs",
-              "RelativeDocumentMoniker": "ShortenedLinks.Application\\Services\\GeoLocation\\GeoLocationService.cs",
-              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Services\\GeoLocation\\GeoLocationService.cs",
-              "RelativeToolTip": "ShortenedLinks.Application\\Services\\GeoLocation\\GeoLocationService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAIAAAA",
+              "Title": "ShortLinkController.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
+              "RelativeToolTip": "ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T22:21:19.577Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Dependencies.cs",
-              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Infrastructure\\IoC\\Dependencies.cs",
-              "RelativeDocumentMoniker": "ShortenedLinks.Infrastructure\\IoC\\Dependencies.cs",
-              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Infrastructure\\IoC\\Dependencies.cs",
-              "RelativeToolTip": "ShortenedLinks.Infrastructure\\IoC\\Dependencies.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABsAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T22:16:11.096Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LinkStatistic.cs",
-              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Domain\\Entities\\LinkStatistic.cs",
-              "RelativeDocumentMoniker": "ShortenedLinks.Domain\\Entities\\LinkStatistic.cs",
-              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Domain\\Entities\\LinkStatistic.cs",
-              "RelativeToolTip": "ShortenedLinks.Domain\\Entities\\LinkStatistic.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-15T22:14:47.755Z",
+              "WhenOpened": "2024-08-16T21:10:16.532Z",
               "EditorCaption": ""
             }
           ]
