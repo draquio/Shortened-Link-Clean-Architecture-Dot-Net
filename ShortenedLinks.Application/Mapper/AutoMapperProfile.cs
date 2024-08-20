@@ -29,9 +29,6 @@ namespace ShortenedLinks.Application.Mapper
                 .ForMember(dto => dto.Username, options => options.MapFrom(link => link.User.Username));
             #endregion
 
-            #region LinkClicksStatisticTop
-            CreateMap<LinkClicksStatisticTop, LinkClicksStatisticTopDTO>().ReverseMap();
-            #endregion
         }
     }
 }

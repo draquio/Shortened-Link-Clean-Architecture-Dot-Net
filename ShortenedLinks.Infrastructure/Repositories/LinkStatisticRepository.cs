@@ -1,6 +1,7 @@
 ﻿
 using Microsoft.EntityFrameworkCore;
 using ShortenedLinks.Domain.Entities;
+using ShortenedLinks.Domain.Enums;
 using ShortenedLinks.Domain.Interfaces.Repositories;
 using ShortenedLinks.Infrastructure.Persistence;
 
@@ -27,8 +28,23 @@ namespace ShortenedLinks.Infrastructure.Repositories
                 throw;
             }
         }
-
-        public async Task<List<LinkClicksStatisticTop>> GetTopLinksByClicks(int userId, PeriodType period, int topN)
+        public async Task<List<LinkStatistic>> GetMonthlyClicks(int userId)
+        {
+            try
+            {
+                var startDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+                var endDate = startDate.AddMonths(1).AddDays(-1);
+                List<LinkStatistic> monthlyClicks = await _dbContext.Set<LinkStatistic>()
+                     .Where(stat => stat.Link.UserId == userId && stat.VisitDate >= startDate && stat.VisitDate <= endDate)
+                     .ToListAsync();
+                return monthlyClicks;
+            }
+            catch
+            {
+                throw;
+            }
+        }
+        public async Task<List<LinkStatistic>> GetLinksByRangePeriod(int userId, PeriodType period)
         {
             try
             {
@@ -54,18 +70,9 @@ namespace ShortenedLinks.Infrastructure.Repositories
                     default:
                         throw new ArgumentOutOfRangeException(nameof(period), period, null);
                 }
-                List<LinkClicksStatisticTop> links = await _dbContext.Set<LinkStatistic>()
+                List<LinkStatistic> links = await _dbContext.Set<LinkStatistic>()
                     .Where(stats => stats.Link.UserId == userId && stats.VisitDate >= startDate && stats.VisitDate <= endDate)
-                    .GroupBy(stats => stats.LinkId)
-                    .Select(g => new LinkClicksStatisticTop
-                    {
-                        LinkId = g.Key,
-                        ClickCount = g.Count(),
-                        Link = g.FirstOrDefault().Link,
-                        PeriodType = period
-                    })
-                    .OrderByDescending(stats => stats.ClickCount)
-                    .Take(topN)
+                    .Include(link => link.Link)
                     .ToListAsync();
                 return links;
             }

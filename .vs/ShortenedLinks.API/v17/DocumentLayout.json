@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "E:\\Net\\ShortenedLinks.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.api\\controllers\\linkstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|solutionrelative:shortenedlinks.api\\controllers\\linkstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.application\\features\\linksstatistics\\queries\\gettoplinks\\gettoplinksqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|solutionrelative:shortenedlinks.application\\features\\linksstatistics\\queries\\gettoplinks\\gettoplinksqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.api\\controllers\\shortlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|solutionrelative:shortenedlinks.api\\controllers\\shortlinkcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.application\\dto\\linkstatistic\\linkclicksstatistictopdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|solutionrelative:shortenedlinks.application\\dto\\linkstatistic\\linkclicksstatistictopdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +18,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LinkStats.cs",
-              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\LinkStats.cs",
-              "RelativeDocumentMoniker": "ShortenedLinks.API\\Controllers\\LinkStats.cs",
-              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\LinkStats.cs",
-              "RelativeToolTip": "ShortenedLinks.API\\Controllers\\LinkStats.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABUAAAAeAAAA",
+              "DocumentIndex": 1,
+              "Title": "LinkClicksStatisticTopDTO.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\DTO\\LinkStatistic\\LinkClicksStatisticTopDTO.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.Application\\DTO\\LinkStatistic\\LinkClicksStatisticTopDTO.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\DTO\\LinkStatistic\\LinkClicksStatisticTopDTO.cs",
+              "RelativeToolTip": "ShortenedLinks.Application\\DTO\\LinkStatistic\\LinkClicksStatisticTopDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-16T21:10:22.142Z",
+              "WhenOpened": "2024-08-20T16:01:48.444Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ShortLinkController.cs",
-              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
-              "RelativeDocumentMoniker": "ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
-              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
-              "RelativeToolTip": "ShortenedLinks.API\\Controllers\\ShortLinkController.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "GetTopLinksQueryHandler.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopLinks\\GetTopLinksQueryHandler.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopLinks\\GetTopLinksQueryHandler.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopLinks\\GetTopLinksQueryHandler.cs",
+              "RelativeToolTip": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopLinks\\GetTopLinksQueryHandler.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwCIAAAA6AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-16T21:10:16.532Z",
+              "WhenOpened": "2024-08-20T15:53:59.425Z",
               "EditorCaption": ""
             }
           ]

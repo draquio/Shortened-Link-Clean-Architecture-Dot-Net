@@ -13,6 +13,5 @@ namespace ShortenedLinks.Application.DTO.LinkStatistic
         public int LinkId { get; set; }
         public int ClickCount { get; set; }
         public LinkListDTO Link { get; set; }
-        public PeriodType PeriodType { get; set; }
     }
 }

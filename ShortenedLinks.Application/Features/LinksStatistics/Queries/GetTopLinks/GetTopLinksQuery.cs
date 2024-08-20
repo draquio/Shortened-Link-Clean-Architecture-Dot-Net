@@ -1,6 +1,7 @@
 ﻿using MediatR;
 using ShortenedLinks.Application.DTO.LinkStatistic;
-using ShortenedLinks.Domain.Entities;
+using ShortenedLinks.Domain.Enums;
+
 
 namespace ShortenedLinks.Application.Features.LinksStatistics.Queries.GetTopLinks
 {
