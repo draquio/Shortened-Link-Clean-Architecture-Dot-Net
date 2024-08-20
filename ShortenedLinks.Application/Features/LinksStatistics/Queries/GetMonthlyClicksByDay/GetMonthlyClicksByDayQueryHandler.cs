@@ -18,17 +18,14 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Queries.GetMonthly
     {
         private readonly ILinkStatisticRepository _linkStatisticRepository;
         private readonly IUserRepository _userRepository;
-        private readonly IMapper _mapper;
         private readonly ValidationService _validationService;
 
         public GetMonthlyClicksByDayQueryHandler(ILinkStatisticRepository linkStatisticRepository, 
             IUserRepository userRepository, 
-            IMapper mapper, 
             ValidationService validationService)
         {
             _linkStatisticRepository = linkStatisticRepository;
             _userRepository = userRepository;
-            _mapper = mapper;
             _validationService = validationService;
         }
 
@@ -53,10 +50,11 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Queries.GetMonthly
 
                 return Monthlystats;
             }
+            catch (ArgumentException) { throw; }
+            catch (KeyNotFoundException) { throw; }
             catch (Exception ex)
             {
-
-                throw;
+                throw new ApplicationException("An error occurred:", ex);
             }
         }
     }

@@ -51,7 +51,7 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Queries.GetTopLink
             catch (KeyNotFoundException) { throw; }
             catch (Exception ex)
             {
-                throw new ApplicationException("An error occurred while getting the short link.", ex);
+                throw new ApplicationException("An error occurred:", ex);
             }
         }
     }

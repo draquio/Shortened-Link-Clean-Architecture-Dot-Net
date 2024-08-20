@@ -1,10 +1,9 @@
-﻿
-using ShortenedLinks.Application.DTO.Device;
+﻿using ShortenedLinks.Application.Services.DeviceInfo;
 
 namespace ShortenedLinks.Application.Interfaces
 {
     public interface IDeviceInfoService
     {
-        DeviceInfoDTO GetDeviceType(string userAgent);
+        DeviceInfo GetDeviceType(string userAgent);
     }
 }

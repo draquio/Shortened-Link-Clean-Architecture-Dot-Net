@@ -2,6 +2,7 @@
 
 using MediatR;
 using ShortenedLinks.Application.Interfaces;
+using ShortenedLinks.Application.Services.Validation;
 using ShortenedLinks.Domain.Entities;
 using ShortenedLinks.Domain.Interfaces.Repositories;
 
@@ -12,20 +13,26 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Commands.Create
         private readonly ILinkStatisticRepository _linkStatisticRepository;
         private readonly IGeoLocationService _geoLocationService;
         private readonly IDeviceInfoService _deviceInfoService;
-        private const int MaxVisitsPerIp = 3;
-        public RegisterLinkStatisticCommandHandler(ILinkStatisticRepository linkStatisticRepository,
-            IGeoLocationService geoLocationService,
-            IDeviceInfoService deviceInfoService)
+        private readonly ValidationService _validationService;
+
+
+        public RegisterLinkStatisticCommandHandler(ILinkStatisticRepository linkStatisticRepository, 
+            IGeoLocationService geoLocationService, IDeviceInfoService 
+            deviceInfoService, 
+            ValidationService validationService)
         {
             _linkStatisticRepository = linkStatisticRepository;
             _geoLocationService = geoLocationService;
             _deviceInfoService = deviceInfoService;
+            _validationService = validationService;
         }
 
         public async Task<Unit> Handle(RegisterLinkStatisticCommand request, CancellationToken cancellationToken)
         {
             try
             {
+                _validationService.IsValidId(request.LinkId);
+                int MaxVisitsPerIp = 3;
                 int todayVisits = await _linkStatisticRepository.CountVisitsByIp(request.LinkId, request.VisitorIp);
                 if (todayVisits <= MaxVisitsPerIp)
                 {
