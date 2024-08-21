@@ -24,6 +24,7 @@ El sistema permite generar nuevos enlaces únicos a través de una petición POS
 ## Endpoint de enlace corto
 El sistema cuenta con un endpoint específico el cual se usa para acceder al enlace corto y redirección a la url original, este endpoint tiene 2 funciones:
 1. Recuperar la información del enlace corto mediante su código para redireccionar al enlace original.
+```
     {
         "id": 1,
         "originalLink": "https://website.com/", <- Enlace al que se debe redirigir
@@ -31,7 +32,9 @@ El sistema cuenta con un endpoint específico el cual se usa para acceder al enl
         "userId": 1,
         "username": "Username"
     }
+```
 2. Registrar la visita/click en el enlace guardando en la base de datos para usarse como analítica.
+```
     {
         "id": 1,
         "linkId": 3,
@@ -41,6 +44,7 @@ El sistema cuenta con un endpoint específico el cual se usa para acceder al enl
         "country": "MX",
         "browser": "Chrome",
     }
+```
 Para esto, internamente se usa servicios propios para obtener navegador y dispositivo, y servicios externos como ipinfo.io para obtener el país.
 
 ![](https://i.ibb.co/VJRzTzh/image.png)
