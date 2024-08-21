@@ -1,7 +1,8 @@
-﻿using System;
+﻿using ShortenedLinks.Application.Interfaces;
+using System;
 namespace ShortenedLinks.Application.Services.Validation
 {
-    public class ValidationService
+    public class ValidationService : IValidationService
     {
         public void IsValidLink(string link)
         {

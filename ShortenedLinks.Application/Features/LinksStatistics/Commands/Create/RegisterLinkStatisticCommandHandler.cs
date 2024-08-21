@@ -13,13 +13,13 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Commands.Create
         private readonly ILinkStatisticRepository _linkStatisticRepository;
         private readonly IGeoLocationService _geoLocationService;
         private readonly IDeviceInfoService _deviceInfoService;
-        private readonly ValidationService _validationService;
+        private readonly IValidationService _validationService;
 
 
         public RegisterLinkStatisticCommandHandler(ILinkStatisticRepository linkStatisticRepository, 
             IGeoLocationService geoLocationService, IDeviceInfoService 
-            deviceInfoService, 
-            ValidationService validationService)
+            deviceInfoService,
+            IValidationService validationService)
         {
             _linkStatisticRepository = linkStatisticRepository;
             _geoLocationService = geoLocationService;

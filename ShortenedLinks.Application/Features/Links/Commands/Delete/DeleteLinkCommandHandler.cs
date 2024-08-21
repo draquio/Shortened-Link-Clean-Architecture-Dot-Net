@@ -1,4 +1,5 @@
 ﻿using MediatR;
+using ShortenedLinks.Application.Interfaces;
 using ShortenedLinks.Application.Services.Validation;
 using ShortenedLinks.Domain.Entities;
 using ShortenedLinks.Domain.Interfaces.Repositories;
@@ -8,9 +9,9 @@ namespace ShortenedLinks.Application.Features.Links.Commands.Delete
     public class DeleteLinkCommandHandler : IRequestHandler<DeleteLinkCommand, bool>
     {
         private readonly ILinkRepository _linkRepository;
-        private readonly ValidationService _validationService;
+        private readonly IValidationService _validationService;
 
-        public DeleteLinkCommandHandler(ILinkRepository linkRepository, ValidationService validationService)
+        public DeleteLinkCommandHandler(ILinkRepository linkRepository, IValidationService validationService)
         {
             _linkRepository = linkRepository;
             _validationService = validationService;

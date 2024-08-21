@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "E:\\Net\\ShortenedLinks.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.api\\controllers\\linkstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0E5D5639-878B-4A54-B5B8-FCC4E2630D7E}|ShortenedLinks.API\\ShortenedLinks.API.csproj|solutionrelative:shortenedlinks.api\\controllers\\linkstats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{17BF9276-70D6-454A-9868-31220467063F}|ShortenedLinks.Tests\\ShortenedLinks.Tests.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.tests\\applicationtest\\features\\linksstatistictest\\queries\\gettoplinksquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17BF9276-70D6-454A-9868-31220467063F}|ShortenedLinks.Tests\\ShortenedLinks.Tests.csproj|solutionrelative:shortenedlinks.tests\\applicationtest\\features\\linksstatistictest\\queries\\gettoplinksquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17BF9276-70D6-454A-9868-31220467063F}|ShortenedLinks.Tests\\ShortenedLinks.Tests.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.tests\\applicationtest\\features\\linksstatistictest\\queries\\gettopdevicesquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17BF9276-70D6-454A-9868-31220467063F}|ShortenedLinks.Tests\\ShortenedLinks.Tests.csproj|solutionrelative:shortenedlinks.tests\\applicationtest\\features\\linksstatistictest\\queries\\gettopdevicesquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.application\\features\\linksstatistics\\queries\\gettopdevices\\gettopdevicesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|solutionrelative:shortenedlinks.application\\features\\linksstatistics\\queries\\gettopdevices\\gettopdevicesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17BF9276-70D6-454A-9868-31220467063F}|ShortenedLinks.Tests\\ShortenedLinks.Tests.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.tests\\applicationtest\\features\\linksstatistictest\\queries\\gettopcountriesquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17BF9276-70D6-454A-9868-31220467063F}|ShortenedLinks.Tests\\ShortenedLinks.Tests.csproj|solutionrelative:shortenedlinks.tests\\applicationtest\\features\\linksstatistictest\\queries\\gettopcountriesquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.application\\features\\linksstatistics\\queries\\gettopcountries\\gettopcountriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|solutionrelative:shortenedlinks.application\\features\\linksstatistics\\queries\\gettopcountries\\gettopcountriesqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{17BF9276-70D6-454A-9868-31220467063F}|ShortenedLinks.Tests\\ShortenedLinks.Tests.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.tests\\applicationtest\\features\\linksstatistictest\\queries\\gettopbrowsersquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{17BF9276-70D6-454A-9868-31220467063F}|ShortenedLinks.Tests\\ShortenedLinks.Tests.csproj|solutionrelative:shortenedlinks.tests\\applicationtest\\features\\linksstatistictest\\queries\\gettopbrowsersquerytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8FA69521-AA47-4FB1-A664-39597E903B64}|ShortenedLinks.Application\\ShortenedLinks.Application.csproj|e:\\net\\shortenedlinks.api\\shortenedlinks.application\\features\\linksstatistics\\queries\\gettopbrowsers\\gettopbrowsersqueryhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -22,45 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "GetTopCountriesQueryHandler.cs",
-              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopCountries\\GetTopCountriesQueryHandler.cs",
-              "RelativeDocumentMoniker": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopCountries\\GetTopCountriesQueryHandler.cs",
-              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopCountries\\GetTopCountriesQueryHandler.cs",
-              "RelativeToolTip": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopCountries\\GetTopCountriesQueryHandler.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAABMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T20:49:56.169Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "LinkStats.cs",
-              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\LinkStats.cs",
-              "RelativeDocumentMoniker": "ShortenedLinks.API\\Controllers\\LinkStats.cs",
-              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.API\\Controllers\\LinkStats.cs",
-              "RelativeToolTip": "ShortenedLinks.API\\Controllers\\LinkStats.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAswF0AAAAPAAAA",
+              "Title": "GetTopLinksQueryTests.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopLinksQueryTests.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopLinksQueryTests.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopLinksQueryTests.cs",
+              "RelativeToolTip": "ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopLinksQueryTests.cs",
+              "ViewState": "AQIAAC0AAAAAAAAAAAA5wD4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T20:44:11.982Z",
+              "WhenOpened": "2024-08-21T15:39:59.833Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "GetTopDevicesQueryHandler.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopDevices\\GetTopDevicesQueryHandler.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopDevices\\GetTopDevicesQueryHandler.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopDevices\\GetTopDevicesQueryHandler.cs",
+              "RelativeToolTip": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopDevices\\GetTopDevicesQueryHandler.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T15:36:04.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GetTopDevicesQueryTests.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopDevicesQueryTests.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopDevicesQueryTests.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopDevicesQueryTests.cs",
+              "RelativeToolTip": "ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopDevicesQueryTests.cs",
+              "ViewState": "AQIAACYAAAAAAAAAAAAAwDQAAAAOAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T15:36:03.764Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GetTopCountriesQueryTests.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopCountriesQueryTests.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopCountriesQueryTests.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopCountriesQueryTests.cs",
+              "RelativeToolTip": "ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopCountriesQueryTests.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAewCMAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T15:31:43.74Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GetTopCountriesQueryHandler.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopCountries\\GetTopCountriesQueryHandler.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopCountries\\GetTopCountriesQueryHandler.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopCountries\\GetTopCountriesQueryHandler.cs",
+              "RelativeToolTip": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopCountries\\GetTopCountriesQueryHandler.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAADMAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T15:29:20.943Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "GetTopBrowsersQueryHandler.cs",
               "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopBrowsers\\GetTopBrowsersQueryHandler.cs",
               "RelativeDocumentMoniker": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopBrowsers\\GetTopBrowsersQueryHandler.cs",
               "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopBrowsers\\GetTopBrowsersQueryHandler.cs",
               "RelativeToolTip": "ShortenedLinks.Application\\Features\\LinksStatistics\\Queries\\GetTopBrowsers\\GetTopBrowsersQueryHandler.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAgwB8AAAAAAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwDUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-20T20:38:26.582Z",
+              "WhenOpened": "2024-08-21T15:14:21.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GetTopBrowsersQueryTests.cs",
+              "DocumentMoniker": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopBrowsersQueryTests.cs",
+              "RelativeDocumentMoniker": "ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopBrowsersQueryTests.cs",
+              "ToolTip": "E:\\Net\\ShortenedLinks.API\\ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopBrowsersQueryTests.cs",
+              "RelativeToolTip": "ShortenedLinks.Tests\\ApplicationTest\\Features\\LinksStatisticTest\\Queries\\GetTopBrowsersQueryTests.cs",
+              "ViewState": "AQIAACwAAAAAAAAAAAAowEYAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-21T15:14:18.196Z",
               "EditorCaption": ""
             }
           ]

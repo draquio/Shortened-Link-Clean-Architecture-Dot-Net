@@ -1,10 +1,11 @@
 ﻿
 
+using ShortenedLinks.Application.Interfaces;
 using ShortenedLinks.Domain.Interfaces.Repositories;
 
 namespace ShortenedLinks.Application.Services.Links
 {
-    public class LinkShortenerService
+    public class LinkShortenerService : ILinkShortenedService
     {
         private const string Alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         private const int ShortLinkLength = 6;

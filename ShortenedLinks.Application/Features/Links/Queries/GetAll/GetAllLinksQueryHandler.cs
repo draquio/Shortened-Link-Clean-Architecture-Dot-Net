@@ -22,7 +22,7 @@ namespace ShortenedLinks.Application.Features.Links.Queries.GetAll
             try
             {
                 List<Link> links = await _linkRepository.GetAllWithUsername(request.Page, request.PageSize);
-                if (links == null) new List<LinkListDTO>();
+                if (links == null) return new List<LinkDetailsDTO>();
                 List<LinkDetailsDTO> linkDetailsDTOs = _mapper.Map<List<LinkDetailsDTO>>(links); 
                 return linkDetailsDTOs;
             }

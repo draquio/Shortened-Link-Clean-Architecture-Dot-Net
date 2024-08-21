@@ -35,8 +35,8 @@ namespace ShortenedLinks.Infrastructure.IoC
             services.AddScoped<ILinkStatisticRepository, LinkStatisticRepository>();
 
             // Services
-            services.AddScoped<LinkShortenerService>();
-            services.AddScoped<ValidationService>();
+            services.AddScoped<ILinkShortenedService, LinkShortenerService>();
+            services.AddScoped<IValidationService, ValidationService>();
             services.AddScoped<IGeoLocationService, GeoLocationService>();
             services.AddScoped<IDeviceInfoService, DeviceInfoService>();
 

@@ -68,6 +68,7 @@ namespace ShortenedLinks.API.Controllers
                 rsp.status = true;
                 rsp.value = await _mediator.Send(command);
                 rsp.msg = "Short link created successfully";
+                return CreatedAtAction(nameof(GetById), new { id = rsp.value.Id }, rsp);
             }
             catch (Exception ex)
             {
@@ -75,7 +76,6 @@ namespace ShortenedLinks.API.Controllers
                 rsp.msg = $"An error occurred: {ex.Message}";
                 return StatusCode(500, rsp);
             }
-            return Ok(rsp);
         }
 
         [HttpDelete("{id:int}")]

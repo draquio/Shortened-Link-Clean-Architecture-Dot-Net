@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ShortenedLinks.Application.DTO.Country;
+using ShortenedLinks.Application.Interfaces;
 using ShortenedLinks.Application.Services.Validation;
 using ShortenedLinks.Domain.Entities;
 using ShortenedLinks.Domain.Interfaces.Repositories;
@@ -15,9 +16,9 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Queries.GetTopCoun
     {
         private readonly ILinkStatisticRepository _linkStatisticRepository;
         private readonly IUserRepository _userRepository;
-        private readonly ValidationService _validationService;
+        private readonly IValidationService _validationService;
 
-        public GetTopCountriesQueryHandler(ILinkStatisticRepository linkStatisticRepository, IUserRepository userRepository, ValidationService validationService)
+        public GetTopCountriesQueryHandler(ILinkStatisticRepository linkStatisticRepository, IUserRepository userRepository, IValidationService validationService)
         {
             _linkStatisticRepository = linkStatisticRepository;
             _userRepository = userRepository;

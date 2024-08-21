@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using ShortenedLinks.Application.DTO.Device;
+using ShortenedLinks.Application.Interfaces;
 using ShortenedLinks.Application.Services.Validation;
 using ShortenedLinks.Domain.Entities;
 using ShortenedLinks.Domain.Interfaces.Repositories;
@@ -15,11 +16,11 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Queries.GetTopDevi
     {
         private readonly ILinkStatisticRepository _linkStatisticRepository;
         private readonly IUserRepository _userRepository;
-        private readonly ValidationService _validationService;
+        private readonly IValidationService _validationService;
 
         public GetTopDevicesQueryHandler(ILinkStatisticRepository linkStatisticRepository, 
-            IUserRepository userRepository, 
-            ValidationService validationService)
+            IUserRepository userRepository,
+            IValidationService validationService)
         {
             _linkStatisticRepository = linkStatisticRepository;
             _userRepository = userRepository;

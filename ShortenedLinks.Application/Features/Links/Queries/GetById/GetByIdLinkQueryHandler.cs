@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using ShortenedLinks.Application.DTO.Link;
+using ShortenedLinks.Application.Interfaces;
 using ShortenedLinks.Application.Services.Validation;
 using ShortenedLinks.Domain.Entities;
 using ShortenedLinks.Domain.Interfaces.Repositories;
@@ -16,14 +17,15 @@ namespace ShortenedLinks.Application.Features.Links.Queries.GetById
     {
         private readonly ILinkRepository _linkRepository;
         private readonly IMapper _mapper;
-        private readonly ValidationService _validationService;
+        private readonly IValidationService _validationService;
 
-        public GetByIdLinkQueryHandler(ILinkRepository linkRepository, IMapper mapper, ValidationService validationService)
+        public GetByIdLinkQueryHandler(ILinkRepository linkRepository, IMapper mapper, IValidationService validationService)
         {
             _linkRepository = linkRepository;
             _mapper = mapper;
             _validationService = validationService;
         }
+
         public async Task<LinkDetailsDTO> Handle(GetByIdLinkQuery request, CancellationToken cancellationToken)
         {
             try

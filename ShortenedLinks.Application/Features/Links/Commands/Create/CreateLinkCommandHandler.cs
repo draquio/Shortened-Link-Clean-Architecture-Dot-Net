@@ -2,8 +2,8 @@
 using AutoMapper;
 using MediatR;
 using ShortenedLinks.Application.DTO.Link;
-using ShortenedLinks.Application.Services.Links;
-using ShortenedLinks.Application.Services.Validation;
+using ShortenedLinks.Application.Interfaces;
+
 using ShortenedLinks.Domain.Entities;
 using ShortenedLinks.Domain.Interfaces.Repositories;
 
@@ -13,12 +13,12 @@ namespace ShortenedLinks.Application.Features.Links.Commands.Create
     {
         private readonly ILinkRepository _linkRepository;
         private readonly IMapper _mapper;
-        private readonly ValidationService _validationService;
-        private readonly LinkShortenerService _linkShortenerService;
+        private readonly IValidationService _validationService;
+        private readonly ILinkShortenedService _linkShortenerService;
 
-        public CreateLinkCommandHandler(ILinkRepository linkRepository, 
-            LinkShortenerService linkShortenerService, 
-            ValidationService validationService, 
+        public CreateLinkCommandHandler(ILinkRepository linkRepository,
+            ILinkShortenedService linkShortenerService,
+            IValidationService validationService, 
             IMapper mapper)
         {
             _linkRepository = linkRepository;

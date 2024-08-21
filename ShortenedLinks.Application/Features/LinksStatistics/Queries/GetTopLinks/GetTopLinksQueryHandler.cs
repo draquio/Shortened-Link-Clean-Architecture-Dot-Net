@@ -3,6 +3,7 @@ using AutoMapper;
 using MediatR;
 using ShortenedLinks.Application.DTO.Link;
 using ShortenedLinks.Application.DTO.LinkStatistic;
+using ShortenedLinks.Application.Interfaces;
 using ShortenedLinks.Application.Services.Validation;
 using ShortenedLinks.Domain.Entities;
 using ShortenedLinks.Domain.Interfaces.Repositories;
@@ -14,12 +15,12 @@ namespace ShortenedLinks.Application.Features.LinksStatistics.Queries.GetTopLink
         private readonly ILinkStatisticRepository _linkStatisticRepository;
         private readonly IUserRepository _userRepository;
         private readonly IMapper _mapper;
-        private readonly ValidationService _validationService;
+        private readonly IValidationService _validationService;
 
         public GetTopLinksQueryHandler(ILinkStatisticRepository linkStatisticRepository, 
             IUserRepository userRepository, 
-            IMapper mapper, 
-            ValidationService validationService)
+            IMapper mapper,
+            IValidationService validationService)
         {
             _linkStatisticRepository = linkStatisticRepository;
             _userRepository = userRepository;
