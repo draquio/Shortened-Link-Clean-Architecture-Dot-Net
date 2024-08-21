@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ShortenedLinks.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b684348f5b0ea6149368ecd1acc55e6d532622b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d06aec8b94272b993c5cdd1fd088a6ee39182a9")]
 [assembly: System.Reflection.AssemblyProductAttribute("ShortenedLinks.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ShortenedLinks.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
