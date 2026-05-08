@@ -1,75 +1,375 @@
-# Shortened Links + Clean Architecture + SQL Server + Analytics
+# URL Shortener — Clean Architecture · .NET 8 · SQL Server · Analytics
 
-## Características del sistema.
-- Implementación de Clean Architecture + estructura de Vertical Slicing architecture.
-- Patrón CQRS
-- Patrón Mediador
-- Patrón de Inyección de dependencias
-- Patrón de capa Servicio para la lógica de negocio.
-- Patrón Repositorio para el manejo de la base de datos.
-- Patrón DTO para crear, listar y actualizar datos (cada modelo tiene sus DTOs).
-- AutoMapper para la mapear de manera más eficiente los DTOs a modelos y separar la lógica de mapeo del servicio.
-- Interfaces de Servicio y repositorio.
-- Cors activada para patición desde cualquier url.
-- Testing
+A production-ready URL shortening service built with **Clean Architecture**, **CQRS**, and **Vertical Slicing** in ASP.NET Core 8. Tracks every click with geo-location, device, and browser data, and exposes analytics reports per user.
 
-![](https://i.ibb.co/T0MNNnn/url-shortener.png)
+![URL Shortener](https://i.ibb.co/T0MNNnn/url-shortener.png)
+
 ---
 
-## Generación de Enlaces Cortos
-El sistema permite generar nuevos enlaces únicos a través de una petición POST al controlador Link, así también se puede obtener un enlace por ID, por una lista paginada y/o eliminar un enlace por ID.
+## Table of Contents
 
-![](https://i.ibb.co/q7r0s8b/image.png)
+- [Features](#features)
+- [Architecture](#architecture)
+- [Project Structure](#project-structure)
+- [Technology Stack](#technology-stack)
+- [Database Schema](#database-schema)
+- [API Reference](#api-reference)
+- [Analytics & Reporting](#analytics--reporting)
+- [Design Patterns](#design-patterns)
+- [Getting Started](#getting-started)
+- [Running Tests](#running-tests)
+
 ---
 
-## Endpoint de enlace corto
-El sistema cuenta con un endpoint específico el cual se usa para acceder al enlace corto y redirección a la url original, este endpoint tiene 2 funciones:
-1. Recuperar la información del enlace corto mediante su código para redireccionar al enlace original.
+## Features
+
+- **URL Shortening** — generates unique 6-character base-62 short codes
+- **Click Tracking** — records IP address, country, device type, and browser for each visit
+- **Anti-abuse** — limits each IP to 4 tracked visits per link per day
+- **Geo-location** — resolves country from IP via [ipinfo.io](https://ipinfo.io)
+- **Device & Browser Detection** — parses User-Agent strings with UAParser
+- **Analytics Reports** — top links, top countries, top devices, top browsers, and daily click aggregations
+- **User Management** — create, update, and delete users; each link is associated with a user
+- **Paginated Endpoints** — all list endpoints support page/pageSize query parameters
+- **Swagger UI** — interactive API documentation included
+
+---
+
+## Architecture
+
+The solution follows **Clean Architecture** with a **Vertical Slicing** folder structure inside the Application layer. Dependencies flow strictly inward: the Domain layer has zero external dependencies.
+
 ```
+┌─────────────────────────────────────────────┐
+│                  API Layer                  │  ← Controllers, Program.cs
+├─────────────────────────────────────────────┤
+│            Application Layer               │  ← CQRS Handlers, DTOs, Services
+├─────────────────────────────────────────────┤
+│           Infrastructure Layer             │  ← EF Core, Repositories, Migrations
+├─────────────────────────────────────────────┤
+│              Domain Layer                  │  ← Entities, Enums, Repository Interfaces
+└─────────────────────────────────────────────┘
+```
+
+**Dependency rule:** API → Application → Domain ← Infrastructure
+
+---
+
+## Project Structure
+
+```
+ShortenedLinks.sln
+│
+├── ShortenedLinks.Domain/
+│   ├── Entities/
+│   │   ├── User.cs
+│   │   ├── Link.cs
+│   │   └── LinkStatistic.cs
+│   ├── Enums/
+│   │   └── PeriodType.cs          (Day | Week | Month)
+│   └── Interfaces/Repositories/
+│       ├── IGenericRepository<T>.cs
+│       ├── ILinkRepository.cs
+│       ├── IUserRepository.cs
+│       └── ILinkStatisticRepository.cs
+│
+├── ShortenedLinks.Application/
+│   ├── Features/                   (Vertical Slicing)
+│   │   ├── Links/
+│   │   │   ├── Commands/           (CreateLink, DeleteLink)
+│   │   │   └── Queries/            (GetAllLinks, GetByIdLink)
+│   │   ├── Users/
+│   │   │   ├── Commands/           (CreateUser, UpdateUser, DeleteUser)
+│   │   │   └── Queries/            (GetAllUsers, GetByIdUser)
+│   │   ├── LinksStatistics/
+│   │   │   ├── Commands/           (RegisterLinkStatistic)
+│   │   │   └── Queries/            (GetTopBrowsers, GetTopCountries,
+│   │   │                            GetTopDevices, GetTopLinks,
+│   │   │                            GetMonthlyClicksByDay)
+│   │   └── ShortLink/
+│   │       └── Queries/            (GetByShortLink)
+│   ├── DTO/                        (per-entity DTOs)
+│   ├── Interfaces/                 (service contracts)
+│   ├── Services/                   (LinkShortener, Validation, GeoLocation, DeviceInfo)
+│   └── Mapper/
+│       └── AutoMapperProfile.cs
+│
+├── ShortenedLinks.Infrastructure/
+│   ├── Persistence/
+│   │   └── ShortenedLinksDbContext.cs
+│   ├── Repositories/               (Generic, Link, User, LinkStatistic)
+│   ├── Migrations/
+│   └── IoC/
+│       └── Dependencies.cs
+│
+├── ShortenedLinks.API/
+│   ├── Controllers/
+│   │   ├── LinkController.cs
+│   │   ├── UserController.cs
+│   │   ├── ShortLinkController.cs
+│   │   └── LinkStats.cs
+│   └── Program.cs
+│
+└── ShortenedLinks.Tests/
+    └── ApplicationTest/Features/
+        ├── LinksTest/
+        ├── LinksStatisticTest/
+        └── ShortLinkTest/
+```
+
+---
+
+## Technology Stack
+
+| Category | Technology | Version |
+|---|---|---|
+| Runtime | .NET / ASP.NET Core | 8.0 |
+| ORM | Entity Framework Core | 8.0.8 |
+| Database | SQL Server | 2019+ |
+| CQRS / Mediator | MediatR | 12.4.0 |
+| Object Mapping | AutoMapper | 12.0.1 |
+| API Docs | Swashbuckle / Swagger | 6.4.0 |
+| User-Agent Parsing | UAParser | 3.1.47 |
+| Unit Testing | xUnit | 2.5.3 |
+| Mocking | Moq | 4.20.70 |
+| Code Coverage | Coverlet | 6.0.0 |
+| Geo-location | ipinfo.io API | — |
+
+---
+
+## Database Schema
+
+```
+Users
+├── Id          int PK
+├── Email       nvarchar (unique)
+└── Username    nvarchar (unique)
+
+Links
+├── Id             int PK
+├── OriginalLink   nvarchar
+├── ShortenedLink  nvarchar (unique)
+├── CreatedAt      datetime2
+└── UserId         int FK → Users.Id
+
+LinkStatistics
+├── Id          int PK
+├── LinkId      int FK → Links.Id (cascade delete)
+├── VisitDate   datetime2
+├── VisitorIp   nvarchar
+├── Country     nvarchar
+├── Device      nvarchar
+└── Browser     nvarchar
+```
+
+---
+
+## API Reference
+
+### Links — `/api/link`
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/link?page=1&pageSize=10` | Paginated list of links with usernames |
+| `GET` | `/api/link/{id}` | Single link details |
+| `POST` | `/api/link` | Create a shortened link |
+| `DELETE` | `/api/link/{id}` | Delete a link |
+
+**POST `/api/link` — request body**
+```json
 {
+  "originalLink": "https://example.com/very/long/path",
+  "userId": 1
+}
+```
+
+**GET `/api/link` — response**
+```json
+{
+  "status": true,
+  "value": [
+    {
+      "id": 1,
+      "originalLink": "https://example.com/very/long/path",
+      "shortenedLink": "lqee02",
+      "createdAt": "21/08/2024"
+    }
+  ]
+}
+```
+
+---
+
+### Short Link Redirect — `/api/shortlink`
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/shortlink/{code}` | Resolve short code → original URL and register the visit |
+
+This endpoint does two things atomically:
+1. Returns the original URL so the client can redirect.
+2. Records the visit (IP, country, device, browser) if the IP has fewer than 4 visits today.
+
+**Response**
+```json
+{
+  "status": true,
+  "value": {
     "id": 1,
-    "originalLink": "https://website.com/", <- Enlace al que se debe redirigir
+    "originalLink": "https://example.com/very/long/path",
     "shortenedLink": "lqee02",
     "userId": 1,
-    "username": "Username"
+    "username": "john_doe"
+  }
 }
 ```
-2. Registrar la visita/click en el enlace guardando en la base de datos para usarse como analítica.
-```
+
+![Short Link](https://i.ibb.co/VJRzTzh/image.png)
+
+---
+
+### Users — `/api/user`
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/user?page=1&pageSize=10` | Paginated user list |
+| `GET` | `/api/user/{id}` | Single user |
+| `POST` | `/api/user` | Create user |
+| `PUT` | `/api/user/{id}` | Update user |
+| `DELETE` | `/api/user/{id}` | Delete user |
+
+---
+
+### Link Statistics — `/api/linkstats`
+
+| Method | Endpoint | Description |
+|---|---|---|
+| `GET` | `/api/linkstats/toplinks/{userId}?period=Month` | Top links by click count |
+| `GET` | `/api/linkstats/monthlyclicks/{userId}` | Clicks grouped by day for the current month |
+| `GET` | `/api/linkstats/topdevices/{userId}` | Top devices (monthly) |
+| `GET` | `/api/linkstats/topbrowsers/{userId}` | Top browsers (monthly) |
+| `GET` | `/api/linkstats/topcountries/{userId}` | Top countries (monthly) |
+
+![Analytics](https://i.ibb.co/F75BFWJ/image.png)
+
+---
+
+## Analytics & Reporting
+
+Each visit to a short link stores:
+
+```json
 {
-    "id": 1,
-    "linkId": 3,
-    "visitDate": "2024-08-21 14:38:21.9300000",
-    "visitorIp": "189.203.3.245",
-    "device": "Desktop",
-    "country": "MX",
-    "browser": "Chrome",
+  "id": 1,
+  "linkId": 3,
+  "visitDate": "2024-08-21T14:38:21.93",
+  "visitorIp": "189.203.3.245",
+  "device": "Desktop",
+  "country": "MX",
+  "browser": "Chrome"
 }
 ```
-Para esto, internamente se usa servicios propios para obtener navegador y dispositivo, y servicios externos como ipinfo.io para obtener el país.
 
-![](https://i.ibb.co/VJRzTzh/image.png)
+Available reports:
+
+| Report | Description |
+|---|---|
+| **Top Links** | Links ranked by click count for Day / Week / Month |
+| **Monthly Clicks** | Daily click totals for the current month |
+| **Top Devices** | Device types ranked by monthly click count |
+| **Top Browsers** | Browsers ranked by monthly click count |
+| **Top Countries** | Countries ranked by monthly click count |
+
+![Links](https://i.ibb.co/q7r0s8b/image.png)
+
 ---
-# Reporte de visitas/clicks
-Éste permite generar reporte de las visitas en los enlaces:
-1. Top Links.- Este endpoint permite generar reporte de los enlaces con más clicks del día, semana y/o mes.
-2. Monthly Clicks.- Permite generar reporte de estadísticas del mes ordenados por día, es decir cada día con la cantidad de clicks.
-3. Top Devices.- Reporte mensual de los dispositivos mas usados para acceder a los enlaces (mayor a menor).
-4. Top Browsers.- Reporte mensual de los navegadores mas usados para acceder a los enlaces (mayor a menor).
-5. Top Countries.- Reporte mensual de los países desde donde se accedieron los enlaces (mayor a menor).
 
-![](https://i.ibb.co/F75BFWJ/image.png)
+## Design Patterns
+
+| Pattern | Where |
+|---|---|
+| **Clean Architecture** | 4-layer separation (Domain / Application / Infrastructure / API) |
+| **CQRS** | MediatR commands & queries in the Application layer |
+| **Mediator** | MediatR decouples controllers from handlers |
+| **Repository** | `IGenericRepository<T>` + specialised repositories |
+| **Dependency Injection** | Built-in .NET DI, configured in `Dependencies.cs` |
+| **DTO** | Separate request/response models per feature |
+| **AutoMapper** | Centralized mapping profile (`AutoMapperProfile.cs`) |
+| **Service Layer** | Domain services for short-code generation, validation, geo-location, device detection |
+| **Vertical Slicing** | Feature folders inside Application (Links, Users, LinksStatistics, ShortLink) |
+
 ---
-# Dependencias
-- Entity Framework
-- Entity Framework SQLServer
-- Entity Framework Core
-- Entity Framework Tools
-- Entity Framework Desing
-- AutoMapper
-- MediatR
-- MediatR dependency injection
-- UAParser
-- Moq (testing)
 
-Desarrollado por Ing. Sergio Mercado.
+## Getting Started
+
+### Prerequisites
+
+- [.NET 8 SDK](https://dotnet.microsoft.com/download/dotnet/8)
+- SQL Server (Express or higher)
+
+### 1 — Clone the repository
+
+```bash
+git clone https://github.com/draquio/Shortened-Link-Clean-Architecture-Dot-Net.git
+cd Shortened-Link-Clean-Architecture-Dot-Net
+```
+
+### 2 — Configure the database connection
+
+Edit `ShortenedLinks.API/appsettings.json`:
+
+```json
+{
+  "ConnectionStrings": {
+    "Connection": "Server=YOUR_SERVER; Database=ShortenedLinksDb; Trusted_Connection=True; TrustServerCertificate=True;"
+  }
+}
+```
+
+### 3 — Apply migrations
+
+```bash
+dotnet ef database update --project ShortenedLinks.Infrastructure --startup-project ShortenedLinks.API
+```
+
+### 4 — Run the API
+
+```bash
+dotnet run --project ShortenedLinks.API
+```
+
+### 5 — Open Swagger UI
+
+Navigate to `https://localhost:{port}/swagger` in your browser.
+
+---
+
+## Running Tests
+
+```bash
+dotnet test
+```
+
+The test suite covers the Application layer using **xUnit** and **Moq**:
+
+| Test Class | Scenarios Covered |
+|---|---|
+| `CreateLinkCommandTests` | Validation failure, null result, successful creation |
+| `GetAllLinksQueryTests` | Paginated results, empty list, database error |
+| `RegisterLinkStatisticCommandTests` | Visit registered, IP threshold exceeded, service error |
+| `GetByShortLinkQueryTests` | Found, not found, error |
+| `GetTopBrowsersQueryTests` | Aggregated results, user not found, error |
+| `GetTopCountriesQueryTests` | Aggregated results, user not found, error |
+| `GetTopDevicesQueryTests` | Aggregated results, user not found, error |
+| `GetTopLinksQueryTests` | Top links by period, user not found, error |
+| `GetMonthlyClicksByDayTests` | Daily aggregation, user not found, error |
+
+---
+
+## License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+
+Developed by **Ing. Sergio Mercado**
